@@ -6,12 +6,13 @@ Feature: Login
 
 @LoginEmailGoogle @Smoke @SuccessfulScenario
 Scenario: Login exitoso con google
-When el usuario hace click en el botón "Continue with Google"
-And el usuario ingresa email de google "testing@gmail.com"
-And el usuario ingresa su password "Str0ngPass"
-Then el usuario se encuentra en el home de Clockify
+  When el usuario hace click en el botón "Continue with Google"
+  And el usuario ingresa email de google "testing@gmail.com"
+  And el usuario ingresa su password "Str0ngPass"
+  And el usuario hace click en el botón "Siguiente"
+  Then el usuario se encuentra en el home de Clockify
 
-@LoginManual @Smoke @SuccessfulScenario
+@LoginManual @Smoke @SuccessfulScenario @Do
 Scenario: Login exitoso manual 
 When el usuario hace click en el botón "Log in manually"
 And el usuario ingresa su email "analia.gonzalez@yahoo.com" 

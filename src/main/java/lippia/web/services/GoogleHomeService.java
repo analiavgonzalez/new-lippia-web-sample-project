@@ -13,7 +13,7 @@ import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
 public class GoogleHomeService extends ActionManager {
 
-//    public static void navegarWeb(){
+//    public static void pageLogin(){
 //        navigateTo(PropertyManager.getProperty("web.base.url"));
 //    }
 
