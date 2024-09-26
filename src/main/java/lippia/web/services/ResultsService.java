@@ -8,7 +8,6 @@ import java.util.NoSuchElementException;
 public class ResultsService extends ActionManager {
 
     public static void assertMessageDisplayed(String messageIdentifier) {
-       // boolean message = !getMessage(messageIdentifier).isEmpty();
         Assert.assertFalse(getMessage(messageIdentifier).isEmpty());
     }
 
@@ -21,7 +20,7 @@ public class ResultsService extends ActionManager {
         try {
             return getElement(messageIdentifier);
         } catch (NoSuchElementException e) {
-            return null; // Manejo de excepciones
+            return null;
         }
     }
 }

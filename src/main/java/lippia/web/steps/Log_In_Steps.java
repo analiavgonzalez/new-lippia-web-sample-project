@@ -71,6 +71,7 @@ public class Log_In_Steps {
     /*********************** LOGICA VALIDACION DE ERRORES ******************************/
     @Then("el usuario visualiza un mensaje de error indicando que el formato de email es inválido")
     public void verifyInvalidEmailMessage() {
+        Log_in_Services.clickOnPassword();
         ResultsService.assertMessageDisplayed(Log_In_Constants.INVALID_EMAIL_SPAN);
     }
     @Then("el usuario visualiza un mensaje de error indicando correo electrónico o contraseña no válidos")

@@ -4,7 +4,7 @@ Feature: Login
   Background: 
   Given el usuario se encuentra en la pantalla de inicio de Clockify
 
-@LoginEmailGoogle @Smoke @SuccessfulScenario @Do
+@LoginEmailGoogle @Smoke @SuccessfulScenario @noCandidate
 Scenario: Login exitoso con google
   When el usuario hace click en el botón "Continue with Google"
   And el usuario ingresa email de google "defaultani@gmail.com" y hace click en el botón "Siguiente"
@@ -38,7 +38,7 @@ Then el usuario se encuentra en el home de Clockify
 #And el usuario ingresa un código inválido
 #Then el usuario visualiza un mensaje de error indicando que el codigo es inválido
 
-@LoginEmail @Smoke @FailedScenario
+@LoginEmail @Smoke @FailedScenario @Automated
 Scenario: Login fallido por email con formato invalido
   When el usuario hace click en el botón "Log in manually"
   And el usuario ingresa su email "analia.gonzalezyahoo.com"

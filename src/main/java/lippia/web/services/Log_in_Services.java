@@ -74,4 +74,8 @@ public class Log_in_Services extends ActionManager {
     public static void clickOnRegisterButton() {
         click(Log_In_Constants.REGISTER_BUTTON_CLOCKIFY);
     }
+
+    public static void clickOnPassword() {
+        click(Log_In_Constants.PASSWORD_MANUALLY);
+    }
 }
