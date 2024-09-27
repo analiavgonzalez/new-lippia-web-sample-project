@@ -3,13 +3,12 @@ Feature: Creación de proyectos
   
   Background: 
   Given el usuario está logueado en la página de Clockify
-	And el usuario tiene asignado un workspace 
 	And el usuario se encuentra en la pantalla de Proyectos
   
 @CreateProject @Smoke @SuccessfulScenario
 Scenario Outline: Creación exitosa de un nuevo proyecto publico
 And no existe un proyecto con nombre <project_name> y cliente <client> 
-When el usuario presiona el botón "Create new project"
+When el usuario presiona el botón Create new project
 And el usuario ingresa el nombre de proyecto <project_name> 
 And el usuario selecciona el cliente <client> 
 And el usuario selecciona el valor publico <public> para indicar que es publico
@@ -23,7 +22,7 @@ Examples:
 | Proyecto Z		| Mr Smith		| Si	 	| azul			|
 
 
-@CreateProject @Smoke @SuccessfulScenario
+@CreateProject @Smoke @SuccessfulScenario @noCandidate
 Scenario Outline: Creación exitosa de un nuevo proyecto privado
 And no existe un proyecto con nombre <project_name> 
 When el usuario presiona el botón "Create new project"
@@ -40,7 +39,7 @@ Examples:
 
 
 
-@CreateProject @Smoke @FailedScenario
+@CreateProject @Smoke @FailedScenario @noCandidate @noCandidate
 Scenario: Creación fallida de un nuevo proyecto publico con nombre existente
 And el proyecto con nombre "TP Examen Final" ya existe
 And el cliente "Miss Klap" ya existe
@@ -53,7 +52,7 @@ And el usuario presiona el botón "Create"
 Then el usuario visualiza mensaje de error indicando que "el proyecto para el cliente ya existe"
 
 
-@SearchProject @Smoke @SuccessfulScenario
+@SearchProject @Smoke @SuccessfulScenario @noCandidate
 Scenario Outline: Busqueda exitosa de proyectos por estado <filtro_estado>
 And existen proyectos cargados
 When el usuario selecciona el filtro <filtro_estado>
@@ -67,7 +66,7 @@ Examples:
 | todo			|
 
 
-@SearchProject @Smoke @SuccessfulScenario
+@SearchProject @Smoke @SuccessfulScenario @noCandidate
 Scenario Outline: Busqueda exitosa de proyectos por cliente <clientes>
 And existen proyectos cargados
 And el cliente <clientes> existe

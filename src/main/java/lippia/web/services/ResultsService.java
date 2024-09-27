@@ -1,6 +1,7 @@
 package lippia.web.services;
 
 import com.crowdar.core.actions.ActionManager;
+import lippia.web.constants.Log_In_Constants;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import java.util.NoSuchElementException;
@@ -22,5 +23,15 @@ public class ResultsService extends ActionManager {
         } catch (NoSuchElementException e) {
             return null;
         }
+    }
+
+    public static void verifyResult() {
+        Assert.assertFalse(getStats().isEmpty());
+    }
+    public static String getStats() {
+        return stats().getText();
+    }
+    private static WebElement stats() {
+        return getElement(Log_In_Constants.OPTION_LOGIN_MANUALLY_BUTTON);
     }
 }

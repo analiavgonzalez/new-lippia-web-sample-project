@@ -13,7 +13,6 @@ public class Log_In_Constants {
 
    //Opción de logueo con google
     public static final String EMAIL_GOOGLE = "id:identifierId";
-    //public static final String EMAIL_NEXT_BUTTON_GOOGLE = "xpath://span[@class='VfPpkd-vQzf8d']";
     public static final String EMAIL_NEXT_BUTTON_GOOGLE = "xpath://span[normalize-space()='Siguiente']";
     public static final String PASSWORD_GOOGLE = "name:Passwd";
     public static final String CONTINUE_BUTTON_GOOGLE = "xpath://span[normalize-space()='Continue']";
@@ -25,6 +24,5 @@ public class Log_In_Constants {
     //Verificaciones o mensajes de error
     public static final String HOME_DIV = "xpath://div[@class='cl-row cl-align-items-center cl-pl-lg-2 cl-py-2 cl-py-lg-custom-0 cl-w-100']";
     public static final String INVALID_EMAIL_SPAN = "xpath://a[@class='ng-tns-c131-2']";
-    // public static final String INVALID_EMAIL_SPAN = "xpath://span[@class='cl-invalid-feedback cl-block cl-mt-0 ng-tns-c131-2 ng-star-inserted']";
     public static final String INVALID_EMAILPASS_SPAN = "xpath://span[@class='ng-tns-c131-2 ng-star-inserted']";
 }

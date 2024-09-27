@@ -8,11 +8,11 @@ Feature: Creación de projectos
 @WorkspaceCreation @Smoke @SuccessfulScenario
 Scenario: Creación exitosa de un nuevo workspace
 And el Workspace "Basic automation" no existe
-When el usuario hace click en el botón "Crear nuevo espacio de trabajo"
+When el usuario hace click en el botón Crear nuevo espacio de trabajo
 And el usuario ingresa el nombre del workspace "Basic automation"
-And el usuario hace click en el botón "Crear"
+And el usuario hace click en el botón Crear
 Then el usuario visualiza un mensaje indicando que se ha creado correctamente
-And el usuario visualiza el nuevo Workspace en la grilla 
+And el usuario visualiza el nuevo "Basic automation" Workspace en la grilla
 
 @UpdateWorkspace @Smoke @SuccessfulScenario
 Scenario: Modificación exitosa de nombre de workspace
