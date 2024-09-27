@@ -1,9 +1,17 @@
 @Workspace @Regression 
-Feature: Creación de projectos
+Feature: Creación de Workspace
   
   Background: 
-  Given el usuario está logueado en la página de Clockify
+  Given el usuario está logueado en la pagina de Clockify
   And el usuario se encuentra en la pantalla de Manage Workspace
+
+  @WorkspaceCreation @Smoke @SuccessfulScenario
+  Scenario: Creación exitosa de un nuevo workspace con nombre aleatorio
+    When el usuario hace click en el botón Crear nuevo espacio de trabajo
+    And el usuario ingresa el nombre del workspace
+    And el usuario hace click en el botón Crear
+    Then el usuario visualiza un mensaje indicando que se ha creado correctamente
+    And el usuario visualiza el nuevo workspace en la grilla
 
 @WorkspaceCreation @Smoke @SuccessfulScenario
 Scenario: Creación exitosa de un nuevo workspace

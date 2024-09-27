@@ -49,15 +49,7 @@ public class Log_in_Services extends ActionManager {
         setInput(Log_In_Constants.LOGIN_BUTTON_MANUALLY, arg0);
     }
 
-    public static void verifyResult() {
-        Assert.assertFalse(getStats().isEmpty());
-    }
-    public static String getStats() {
-        return stats().getText();
-    }
-    private static WebElement stats() {
-        return getElement(Log_In_Constants.HOME_DIV);
-    }
+
 
     public static void clickOnNextButton() {
         click(Log_In_Constants.EMAIL_NEXT_BUTTON_GOOGLE);
@@ -77,5 +69,15 @@ public class Log_in_Services extends ActionManager {
 
     public static void clickOnPassword() {
         click(Log_In_Constants.PASSWORD_MANUALLY);
+    }
+
+    public static void madeEasyLogin() {
+        navigateTo(PropertyManager.getProperty("web.base.url"));
+        click(Log_In_Constants.OPTION_LOGIN_MANUALLY_BUTTON);
+        setInput(Log_In_Constants.EMAIL_MANUALLY, "anyvg87@yahoo.com.ar");
+        setInput(Log_In_Constants.PASSWORD_MANUALLY, "BAT123456");
+        click(Log_In_Constants.LOGIN_BUTTON_MANUALLY);
+        //ResultsService.assertMessageDisplayed(Log_In_Constants.HOME_DIV);
+        ResultsService.verifyActionResult(Log_In_Constants.HOME_DIV);
     }
 }

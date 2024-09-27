@@ -66,7 +66,7 @@ public class Log_In_Steps {
     /*********************** LOGICA UNA VEZ LOGUEADO ******************************/
     @Then("el usuario se encuentra en el home de Clockify")
     public void goToHomeClockify() {
-        Log_in_Services.verifyResult();
+        ResultsService.verifyActionResult(Log_In_Constants.HOME_DIV);
     }
     /*********************** LOGICA VALIDACION DE ERRORES ******************************/
     @Then("el usuario visualiza un mensaje de error indicando que el formato de email es inválido")

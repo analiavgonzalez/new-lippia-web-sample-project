@@ -25,13 +25,14 @@ public class ResultsService extends ActionManager {
         }
     }
 
-    public static void verifyResult() {
-        Assert.assertFalse(getStats().isEmpty());
+    /*************** Verificar si ya esta en la home o se deslogueo ******************/
+    public static void verifyActionResult(String constant) {
+        Assert.assertFalse(getStats(constant).isEmpty());
     }
-    public static String getStats() {
-        return stats().getText();
+    public static String getStats(String constant) {
+        return stats(constant).getText();
     }
-    private static WebElement stats() {
-        return getElement(Log_In_Constants.OPTION_LOGIN_MANUALLY_BUTTON);
+    private static WebElement stats(String constant) {
+        return getElement(constant); //Log_In_Constants.HOME_DIV);
     }
 }

@@ -25,8 +25,6 @@ public class LogoutService extends ActionManager {
     }
 
     public static void verifyLogoutAndRedirect() {
-        //ResultsService.assertMessageDisplayed(Log_In_Constants.OPTION_LOGIN_MANUALLY_BUTTON);
-       // ResultsService.verifyResult();
-       setInput(Log_In_Constants.EMAIL_MANUALLY, "anyvg87@yahoo.com.ar");
+        ResultsService.verifyActionResult(Log_In_Constants.EMAIL_MANUALLY);
     }
 }
