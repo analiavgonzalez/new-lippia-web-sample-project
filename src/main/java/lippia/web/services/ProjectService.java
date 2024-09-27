@@ -1,10 +1,6 @@
 package lippia.web.services;
-import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
-import lippia.web.constants.Log_In_Constants;
 import lippia.web.constants.Project_Constants;
-
-import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
 public class ProjectService extends ActionManager {
 

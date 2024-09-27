@@ -1,10 +1,7 @@
 package lippia.web.services;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
-import lippia.web.constants.GoogleConstants;
 import lippia.web.constants.Log_In_Constants;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 
