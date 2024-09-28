@@ -16,10 +16,6 @@ public class WorkspaceService extends ActionManager {
         click(WorkspaceConstants.CREATE_BUTTON);
     }
 
-    public static void setWorkspaceName(String name) {
-        setInput(WorkspaceConstants.WORKSPACE_NAME_TEXT, name);
-    }
-
     public static void clickOnCreateButton() {
         click(WorkspaceConstants.CREATE_NEW_BUTTON);
     }
@@ -37,12 +33,22 @@ public class WorkspaceService extends ActionManager {
     }
 
     public static void clickOnConfigurationButton() {
+        WebActionManager.waitVisibility(WorkspaceConstants.SEARCH_ANI_WORKSPACE);
         click(WorkspaceConstants.SEARCH_ANI_WORKSPACE);
     }
 
     public static void goToWorkspaceList() {
         //click(Workspace_Contants.SEARCH_UPDATED_WORKSPACE);
         ResultsService.verifyActionResult(WorkspaceConstants.SEARCH_UPDATED_WORKSPACE);
+    }
+
+    public static void generateWorkspaceName() {
+        setInput(WorkspaceConstants.WORKSPACE_NAME_TEXT, WorkspaceGeneratorNameService.generateWorkspaceName());
+    }
+
+    public static void verifyCreationMessage() {
+        WebActionManager.waitVisibility(WorkspaceConstants.MSG_SUCCESSFUL_CREATION);
+        ResultsService.assertMessageDisplayed(WorkspaceConstants.MSG_SUCCESSFUL_CREATION);
     }
 }
 

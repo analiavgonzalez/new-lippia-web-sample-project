@@ -1,13 +1,10 @@
 package lippia.web.steps;
 
-import com.crowdar.core.actions.WebActionManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lippia.web.constants.WorkspaceConstants;
 import lippia.web.services.LoginService;
-import lippia.web.services.ResultsService;
 import lippia.web.services.WorkspaceService;
 
 public class WorkspaceSteps {
@@ -27,11 +24,6 @@ public class WorkspaceSteps {
         WorkspaceService.clickOnCreateNewWorkspace();
     }
 
-    @And("el usuario ingresa el nombre del workspace {string}")
-    public void setWorkspaceName(String name) {
-        WorkspaceService.setWorkspaceName(name);
-    }
-
     @And("el usuario hace click en el botón Crear")
     public void clickOnCreateButton() {
         WorkspaceService.clickOnCreateButton();
@@ -39,8 +31,7 @@ public class WorkspaceSteps {
 
     @Then("el usuario visualiza un mensaje indicando que se ha creado correctamente")
     public void verifyCreationMessage() {
-       WebActionManager.waitVisibility(WorkspaceConstants.MSG_SUCCESSFUL_CREATION);
-       ResultsService.assertMessageDisplayed(WorkspaceConstants.MSG_SUCCESSFUL_CREATION);
+        WorkspaceService.verifyCreationMessage();
     }
 
     @And("el workspace {string} ya existe")
@@ -66,5 +57,11 @@ public class WorkspaceSteps {
     @And("el usuario visualiza el nuevo workspace Update workspace en la grilla")
     public void goToWorkspaceList() {
         WorkspaceService.goToWorkspaceList();
+    }
+
+    @And("el usuario ingresa el nombre del workspace")
+    public void setWorkspaceName() {
+        WorkspaceService.generateWorkspaceName();
+
     }
 }
