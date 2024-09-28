@@ -1,6 +1,6 @@
 package lippia.web.constants;
 
-public class Log_In_Constants {
+public class LogInConstants {
 
     // BOTONES OPCIONES DE LOGUEO MANUAL Y GOOGLE
     public static final String OPTION_LOGIN_GOOGLE_BUTTON = "xpath://span[@class='cl-mx-3 cl-flex-grow-1 ng-tns-c131-2']";

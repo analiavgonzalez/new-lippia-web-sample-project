@@ -5,16 +5,16 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lippia.web.constants.Workspace_Contants;
-import lippia.web.services.Log_in_Services;
+import lippia.web.constants.WorkspaceConstants;
+import lippia.web.services.LoginService;
 import lippia.web.services.ResultsService;
 import lippia.web.services.WorkspaceService;
 
-public class Workspace_Steps {
+public class WorkspaceSteps {
 
     @Given("el usuario está logueado en la pagina de Clockify")
     public void makeLoginToWorkspace() {
-        Log_in_Services.madeEasyLogin();
+        LoginService.madeEasyLogin();
     }
 
     @And("el usuario se encuentra en la pantalla de Manage Workspace")
@@ -39,8 +39,8 @@ public class Workspace_Steps {
 
     @Then("el usuario visualiza un mensaje indicando que se ha creado correctamente")
     public void verifyCreationMessage() {
-       WebActionManager.waitVisibility(Workspace_Contants.MSG_SUCCESSFUL_CREATION_XPATH);
-       ResultsService.assertMessageDisplayed(Workspace_Contants.MSG_SUCCESSFUL_CREATION_XPATH);
+       WebActionManager.waitVisibility(WorkspaceConstants.MSG_SUCCESSFUL_CREATION);
+       ResultsService.assertMessageDisplayed(WorkspaceConstants.MSG_SUCCESSFUL_CREATION);
     }
 
     @And("el workspace {string} ya existe")

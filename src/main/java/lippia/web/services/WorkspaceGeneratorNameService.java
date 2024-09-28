@@ -2,7 +2,7 @@ package lippia.web.services;
 
 import java.util.Random;
 
-public class WorkspaceGeneratorName {
+public class WorkspaceGeneratorNameService {
 
     private static final String[] name = {
             "Test ", "Prueba ", "Workspace "

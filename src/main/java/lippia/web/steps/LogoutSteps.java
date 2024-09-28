@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lippia.web.services.LogoutService;
 
-public class Logout_Steps {
+public class LogoutSteps {
     @Given("el usuario se encuentra logueado en Clockify")
     public void doLogin() {
         LogoutService.doLogin();

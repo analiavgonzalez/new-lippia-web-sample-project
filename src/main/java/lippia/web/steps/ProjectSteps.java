@@ -1,18 +1,16 @@
 package lippia.web.steps;
 
-import com.crowdar.core.actions.WebActionManager;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lippia.web.constants.Project_Constants;
-import lippia.web.services.Log_in_Services;
+import lippia.web.services.LoginService;
 import lippia.web.services.ProjectService;
 
-public class Project_Steps {
+public class ProjectSteps {
     @Given("el usuario está logueado en la página de Clockify")
     public void doLoginToProject() {
-        Log_in_Services.madeEasyLogin();
+        LoginService.madeEasyLogin();
     }
 
     @And("el usuario se encuentra en la pantalla de Proyectos")

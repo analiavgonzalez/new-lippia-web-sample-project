@@ -1,38 +1,38 @@
 package lippia.web.services;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
-import lippia.web.constants.Project_Constants;
+import lippia.web.constants.ProjectConstants;
 
 import java.util.Random;
 
 public class ProjectService extends ActionManager {
 
     public static void goToProjectsPage() {
-        click(Project_Constants.MENU_PROJECT_XPATH);
+        click(ProjectConstants.MENU_PROJECT);
     }
 
     public static void clickOnCreateNewProjectButton() {
-        click(Project_Constants.CREATE_PROJECT_XPATH);
+        click(ProjectConstants.CREATE_PROJECT);
     }
     private static final Random random = new Random();
 
     public static void setProjectName() {
         int randomNumber = random.nextInt(100);
         String projectName= "BAT "  + randomNumber;
-        setInput(Project_Constants.PROJECT_NAME_XPATH, projectName);
+        setInput(ProjectConstants.PROJECT_NAME, projectName);
     }
 
     public static void setPublicProject() {
-        click(Project_Constants.PUBLIC_CHECKBOX_XPATH);
+        click(ProjectConstants.PUBLIC_CHECKBOX);
     }
 
     public static void clickCreateNewProject() {
-        click(Project_Constants.CREATE_NEW_PROJECT_XPATH);
-        WebActionManager.waitClickable(Project_Constants.DIV_CREATION_MSG_XPATH);
+        click(ProjectConstants.CREATE_NEW_PROJECT);
+        WebActionManager.waitClickable(ProjectConstants.DIV_CREATION_MSG);
     }
 
     public static void verifySuccessfulMessage() {
-        WebActionManager.waitVisibility(Project_Constants.DIV_CREATION_MSG_XPATH);
-        ResultsService.assertMessageDisplayed(Project_Constants.DIV_CREATION_MSG_XPATH);
+        WebActionManager.waitVisibility(ProjectConstants.DIV_CREATION_MSG);
+        ResultsService.assertMessageDisplayed(ProjectConstants.DIV_CREATION_MSG);
     }
 }

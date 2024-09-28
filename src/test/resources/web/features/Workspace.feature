@@ -5,7 +5,7 @@ Feature: Creación de Workspace
   Given el usuario está logueado en la pagina de Clockify
   And el usuario se encuentra en la pantalla de Manage Workspace
 
-  @WorkspaceCreation @Smoke @SuccessfulScenario
+  @WorkspaceCreation @Smoke @SuccessfulScenario @Do
   Scenario: Creación exitosa de un nuevo workspace con nombre aleatorio
     When el usuario hace click en el botón Crear nuevo espacio de trabajo
     And el usuario ingresa el nombre del workspace
@@ -31,7 +31,6 @@ Feature: Creación de Workspace
 #And el usuario visualiza el nuevo "Basic automation" Workspace en la grilla
 #
 
-#
 #@DeleteWorkspace @SuccessfulScenario
 #Scenario: Eliminación exitosa de workspace
 #And el workspace "Prueba" se encuentra registrado
