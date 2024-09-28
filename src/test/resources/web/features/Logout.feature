@@ -1,7 +1,7 @@
 @Logout @Regression
 Feature: Logout
 
-  @SuccessfulScenario @Automated
+  @SuccessfulScenario @Automated @Do
   Scenario: Logout exitoso
   Given el usuario se encuentra logueado en Clockify
   When el usuario hace click en el nombre de usuario

@@ -27,6 +27,7 @@ public class LogoutService extends ActionManager {
     }
 
     public static void verifyLogoutAndRedirect() {
-        ResultsService.verifyActionResult(LogInConstants.EMAIL_MANUALLY);
+        WebActionManager.waitVisibility(LogInConstants.EMAIL_MANUALLY);
+        click(LogInConstants.EMAIL_MANUALLY);
     }
 }
