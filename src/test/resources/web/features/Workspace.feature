@@ -10,8 +10,16 @@ Feature: Creación de Workspace
     When el usuario hace click en el botón Crear nuevo espacio de trabajo
     And el usuario ingresa el nombre del workspace
     And el usuario hace click en el botón Crear
-    #Then el usuario visualiza un mensaje indicando que se ha creado correctamente
-    Then el usuario visualiza el nuevo workspace en la grilla
+    Then el usuario visualiza un mensaje indicando que se ha creado correctamente
+
+  @UpdateWorkspace @Smoke @SuccessfulScenario
+  Scenario: Modificación exitosa de nombre de workspace
+    And el workspace "Ani workspace" ya existe
+    When el usuario hace click en el botón Configuración del workspace Ani workspace
+    And el usuario ingresa "Update workspace" en el campo Workspace name y presiona el botón Enter
+    Then el usuario hace click en el botón Manage Workspace
+    And el usuario visualiza el nuevo workspace Update workspace en la grilla
+
 
 #@WorkspaceCreation @Smoke @SuccessfulScenario
 #Scenario: Creación exitosa de un nuevo workspace
@@ -22,15 +30,7 @@ Feature: Creación de Workspace
 #Then el usuario visualiza un mensaje indicando que se ha creado correctamente
 #And el usuario visualiza el nuevo "Basic automation" Workspace en la grilla
 #
-#@UpdateWorkspace @Smoke @SuccessfulScenario
-#Scenario: Modificación exitosa de nombre de workspace
-#And el workspace "Test workspace Ani" se encuentra registrado
-#When el usuario hace click en el botón "Configuración" del workspace "Test workspace Ani"
-#And el usuario ingresa "Prueba" en el campo "Workspace name" del tab "general"
-#And el usuario presiona el botón "Enter"
-#Then el usuario visualiza un mensaje de procesamiento
-#And el usuario hace click en el botón "Manage Workspace"
-#And el usuario visualiza el nuevo nombre de Workspace en la grilla
+
 #
 #@DeleteWorkspace @SuccessfulScenario
 #Scenario: Eliminación exitosa de workspace

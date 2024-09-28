@@ -16,16 +16,4 @@ public class WorkspaceGeneratorName {
         return WorkspaceName + randomNumber;
     }
 
-//    public void storageWorkspaceName(String workspaceName) {
-//        HttpSession session = getCurrentSession();
-//
-//        session.setAttribute("workspaceName", workspaceName);
-//    }
-//
-//    private HttpSession getCurrentSession() {
-//        // Lógica para obtener la sesión
-//        // Esto dependerá de cómo esté estructurada tu aplicación
-//        return null; // Placeholder: Implementar la lógica para recuperar la sesión
-//    }
-
 }

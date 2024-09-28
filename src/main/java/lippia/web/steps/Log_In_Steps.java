@@ -50,7 +50,7 @@ public class Log_In_Steps {
 
 
     /*********************** LOGICA LOGIN MANUAL ******************************/
-    @And("^el usuario ingresa su email (.*)$")
+    @And("el usuario ingresa su email {string}")
     public void enterEmailManual(String email) {
         Log_in_Services.enterEmailManually(email);
     }

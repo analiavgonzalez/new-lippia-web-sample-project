@@ -1,6 +1,7 @@
 package lippia.web.services;
 import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.ActionManager;
+import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.Log_In_Constants;
 
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
@@ -46,8 +47,6 @@ public class Log_in_Services extends ActionManager {
         setInput(Log_In_Constants.LOGIN_BUTTON_MANUALLY, arg0);
     }
 
-
-
     public static void clickOnNextButton() {
         click(Log_In_Constants.EMAIL_NEXT_BUTTON_GOOGLE);
     }
@@ -74,7 +73,7 @@ public class Log_in_Services extends ActionManager {
         setInput(Log_In_Constants.EMAIL_MANUALLY, "anyvg87@yahoo.com.ar");
         setInput(Log_In_Constants.PASSWORD_MANUALLY, "BAT123456");
         click(Log_In_Constants.LOGIN_BUTTON_MANUALLY);
-        //ResultsService.assertMessageDisplayed(Log_In_Constants.HOME_DIV);
+        WebActionManager.waitVisibility(Log_In_Constants.HOME_DIV);
         ResultsService.verifyActionResult(Log_In_Constants.HOME_DIV);
     }
 }
