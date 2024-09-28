@@ -3,9 +3,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import lippia.web.constants.LogInConstants;
 import lippia.web.services.LoginService;
-import lippia.web.services.ResultsService;
 
 public class LogInSteps {
     @Given("el usuario se encuentra en la pantalla de inicio de Clockify")
@@ -14,11 +12,10 @@ public class LogInSteps {
     }
 
     /*********************** SELECCION DE OPCIONES DE LOGIN ******************************/
-    @And("el usuario hace click en el botón {string} para logueo manual")
-    public void clickButtonLogIn(String arg0) {
+    @And("el usuario hace click en el botón Log in para logueo manual")
+    public void clickButtonLogIn() {
         LoginService.clickButtonLogIn();
     }
-
 
     /*********************** LOGICA LOGIN MANUAL ******************************/
     @And("el usuario ingresa su email {string}")
@@ -37,18 +34,21 @@ public class LogInSteps {
     /*********************** LOGICA UNA VEZ LOGUEADO ******************************/
     @Then("el usuario se encuentra en el home de Clockify")
     public void goToHomeClockify() {
-        ResultsService.verifyActionResult(LogInConstants.HOME_DIV);
+        LoginService.goToHomeClockify();
     }
     /*********************** LOGICA VALIDACION DE ERRORES ******************************/
     @Then("el usuario visualiza un mensaje de error indicando que el formato de email es inválido")
     public void verifyInvalidEmailMessage() {
-        LoginService.clickOnPassword();
-        ResultsService.assertMessageDisplayed(LogInConstants.INVALID_EMAIL_SPAN);
+        LoginService.verifyInvalidEmailMessage();
+
     }
     @Then("el usuario visualiza un mensaje de error indicando correo electrónico o contraseña no válidos")
     public void verifyInvalidEmailOrPasswordMessage() {
-        ResultsService.assertMessageDisplayed(LogInConstants.INVALID_EMAILPASS_SPAN);
+        LoginService.verifyInvalidEmailOrPasswordMessage();
     }
 
-
+    @When("el usuario hace click en el botón Log in manually")
+    public void clickOnButtonLogInManually() {
+        LoginService.clickOnButtonLogInManually();
+    }
 }

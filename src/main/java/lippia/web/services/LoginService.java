@@ -10,29 +10,9 @@ public class LoginService extends ActionManager {
     public static void pageLogin(){
         navigateTo(PropertyManager.getProperty("web.base.url"));
     }
-    
-    public static void clickOnButtonOptionLogin( String button) {
-        String buttonClicked = null;
-
-        if(button.equals("Continue with Google")) {
-            buttonClicked = LogInConstants.OPTION_LOGIN_GOOGLE_BUTTON;
-        }else{
-            buttonClicked = LogInConstants.OPTION_LOGIN_MANUALLY_BUTTON;
-        }
-
-        click(buttonClicked);
-    }
 
     public static void clickButtonLogIn() {
         click(LogInConstants.LOGIN_BUTTON_MANUALLY);
-    }
-    
-    public static void emailGoogle(String email) {
-        setInput(LogInConstants.EMAIL_GOOGLE,email);
-    }
-
-    public static void passwordGoogle(String password) {
-        setInput(LogInConstants.PASSWORD_GOOGLE, password);
     }
 
     public static void enterEmailManually(String email) {
@@ -47,22 +27,6 @@ public class LoginService extends ActionManager {
         setInput(LogInConstants.LOGIN_BUTTON_MANUALLY, arg0);
     }
 
-    public static void clickOnNextButton() {
-        click(LogInConstants.EMAIL_NEXT_BUTTON_GOOGLE);
-    }
-
-    public static void clickOnContinueButton() {
-        click(LogInConstants.CONTINUE_BUTTON_GOOGLE);
-    }
-
-    public static void clickOnTyC() {
-        click(LogInConstants.AGREE_TYC_LABEL_CLOCKIFY);
-    }
-
-    public static void clickOnRegisterButton() {
-        click(LogInConstants.REGISTER_BUTTON_CLOCKIFY);
-    }
-
     public static void clickOnPassword() {
         click(LogInConstants.PASSWORD_MANUALLY);
     }
@@ -75,5 +39,24 @@ public class LoginService extends ActionManager {
         click(LogInConstants.LOGIN_BUTTON_MANUALLY);
         WebActionManager.waitVisibility(LogInConstants.HOME_DIV);
         ResultsService.verifyActionResult(LogInConstants.HOME_DIV);
+    }
+
+    public static void clickOnButtonLogInManually() {
+        click(LogInConstants.OPTION_LOGIN_MANUALLY_BUTTON);
+    }
+
+    public static void goToHomeClockify() {
+        WebActionManager.waitVisibility(LogInConstants.HOME_DIV);
+        ResultsService.verifyActionResult(LogInConstants.HOME_DIV);
+    }
+
+    public static void verifyInvalidEmailMessage() {
+        LoginService.clickOnPassword();
+        ResultsService.assertMessageDisplayed(LogInConstants.INVALID_EMAIL_SPAN);
+    }
+
+    public static void verifyInvalidEmailOrPasswordMessage() {
+        WebActionManager.waitVisibility(LogInConstants.INVALID_EMAILPASS_SPAN);
+        ResultsService.assertMessageDisplayed(LogInConstants.INVALID_EMAILPASS_SPAN);
     }
 }
