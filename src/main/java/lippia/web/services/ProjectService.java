@@ -7,14 +7,16 @@ import java.util.Random;
 
 public class ProjectService extends ActionManager {
 
+    private static final Random random = new Random();
+
     public static void goToProjectsPage() {
+        WebActionManager.waitVisibility(ProjectConstants.MENU_PROJECT);
         click(ProjectConstants.MENU_PROJECT);
     }
 
     public static void clickOnCreateNewProjectButton() {
         click(ProjectConstants.CREATE_PROJECT);
     }
-    private static final Random random = new Random();
 
     public static void setProjectName() {
         int randomNumber = random.nextInt(100);
@@ -28,7 +30,6 @@ public class ProjectService extends ActionManager {
 
     public static void clickCreateNewProject() {
         click(ProjectConstants.CREATE_NEW_PROJECT);
-        WebActionManager.waitClickable(ProjectConstants.DIV_CREATION_MSG);
     }
 
     public static void verifySuccessfulMessage() {
