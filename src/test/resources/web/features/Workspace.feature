@@ -1,4 +1,4 @@
-@Workspace @Regression 
+@Workspace @Regression  @Do
 Feature: Creación de Workspace
   
   Background: 
@@ -12,7 +12,7 @@ Feature: Creación de Workspace
     And el usuario hace click en el botón Crear
     Then el usuario visualiza un mensaje indicando que se ha creado correctamente
 
-  @UpdateWorkspace @Smoke @SuccessfulScenario @Automated @Do
+  @UpdateWorkspace @Smoke @SuccessfulScenario @Automated
   Scenario: Modificación exitosa de nombre de workspace
     And el workspace "Ani workspace" ya existe
     When el usuario hace click en el botón Configuración del workspace Ani workspace
