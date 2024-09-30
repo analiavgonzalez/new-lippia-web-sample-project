@@ -3,6 +3,7 @@ package lippia.web.constants;
 public class WorkspaceConstants {
     public static final String CONFIG_BUTTON = "xpath://img[@alt='Workspace dropdown options']";
     public static final String MANAGEW_BUTTON = "xpath://a[normalize-space()='Gestionar espacios de trabajo']";
+    public static final String TITLE_UPDATE = "xpath://div[contains(text(),'Nombre del espacio de trabajo')]";
     public static final String CREATE_BUTTON = "xpath://button[@class='cl-btn cl-btn-outline-primary cl-d-none-print']";
     public static final String WORKSPACE_NAME_TEXT = "xpath://input[@type='text']";
     public static final String CREATE_NEW_BUTTON = "xpath://button[@type='submit']";
