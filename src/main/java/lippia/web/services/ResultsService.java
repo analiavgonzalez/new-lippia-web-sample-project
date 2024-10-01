@@ -7,6 +7,10 @@ import java.util.NoSuchElementException;
 
 public class ResultsService extends ActionManager {
 
+    public static void assertErrorMessageDisplayed(String messageIdentifier) {
+        Assert.assertTrue(getMessage(messageIdentifier).isEmpty());
+    }
+
     public static void assertMessageDisplayed(String messageIdentifier) {
         Assert.assertFalse(getMessage(messageIdentifier).isEmpty());
     }

@@ -57,6 +57,6 @@ public class LoginService extends ActionManager {
 
     public static void verifyInvalidEmailOrPasswordMessage() {
         WebActionManager.waitVisibility(LogInConstants.INVALID_EMAILPASS_SPAN);
-        ResultsService.assertMessageDisplayed(LogInConstants.INVALID_EMAILPASS_SPAN);
+        ResultsService.assertErrorMessageDisplayed(LogInConstants.INVALID_EMAILPASS_SPAN);
     }
 }

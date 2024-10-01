@@ -1,7 +1,7 @@
 @Project @Regression 
 Feature: Creación de proyectos
 
-  @CreateProject @Smoke @SuccessfulScenario @Automated
+  @CreateProject @Smoke @SuccessfulScenario @Automated @Do
   Scenario: Creación exitosa de un nuevo proyecto publico
     Given el usuario está logueado en la página de Clockify
     And el usuario se encuentra en la pantalla de Proyectos

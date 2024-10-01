@@ -1,4 +1,4 @@
-@Workspace @Regression  @Do
+@Workspace @Regression
 Feature: Creación de Workspace
   
   Background: 
